@@ -14,14 +14,14 @@ const QuizPage = () => {
 
     useEffect(() => {
         if (id) {
-            axios.get(`https://swiftrut-task-9-quiz.onrender.com/api/quizzes/${id}`)
+            axios.get(`https://quiz-system-swiftrut.onrender.com/quizzes/${id}`)
                 .then(response => setQuiz(response.data))
                 .catch(error => setError('Error fetching quiz'));  // setError is used here
         }
     }, [id]);
 
     const handleSubmit = () => {
-        axios.post(`https://swiftrut-task-9-quiz.onrender.com/api/quizzes/${id}/submit`, { answers })
+        axios.post(`https://quiz-system-swiftrut.onrender.com/quizzes/${id}/submit`, { answers })
             .then(response => {
                 setScore(response.data.score);
                 setSubmitted(true);

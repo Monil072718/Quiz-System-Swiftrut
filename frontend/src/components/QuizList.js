@@ -8,7 +8,7 @@ const QuizList = () => {
     const [error, setError] = useState(null);
 
     useEffect(() => {
-        axios.get('https://swiftrut-task-9-quiz.onrender.com/api/quizzes')
+        axios.get('https://quiz-system-swiftrut.onrender.com/quizzes')
             .then(response => {
                 console.log(response.data); // Log the response data to check if it's fetched
                 setQuizzes(response.data);
@@ -21,7 +21,7 @@ const QuizList = () => {
 
     return (
         <div className="quiz-list-container">
-            <h1>Available Quizzes</h1>
+            <h1>Available Quizzes</h1>/
             {error && <p className="error-message">{error}</p>}
             {quizzes.length > 0 ? (
                 quizzes.map(quiz => (
