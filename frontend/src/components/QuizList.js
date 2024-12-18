@@ -8,7 +8,7 @@ const QuizList = () => {
     const [error, setError] = useState(null);
 
     useEffect(() => {
-        axios.get('http://localhost:5500/api/quizzes')
+        axios.get('https://swiftrut-task-9-quiz.onrender.com/api/quizzes')
             .then(response => {
                 console.log(response.data); // Log the response data to check if it's fetched
                 setQuizzes(response.data);
